@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Hex : MonoBehaviour 
 {
@@ -55,6 +57,8 @@ public class Hex : MonoBehaviour
             light.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3, gameObject.transform.position.z);
 
             GameObject.Find("GameMaster").GetComponent<GameMaster>().currentClick = gameObject;
+
+            getNeighbors();
         }
     }
 
@@ -84,6 +88,50 @@ public class Hex : MonoBehaviour
         this.GetComponentInChildren<TextMesh>().color = owner.color;
         Renderer ren = gameObject.GetComponent<Renderer>();
         ren.material.SetColor("_Color", owner.color);
+    }
+
+    public GameObject[] getNeighbors()
+    {
+        List<GameObject> neighbors = new List<GameObject>();
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x + 1500, transform.position.y, transform.position.z), out hit))
+        {
+            if(hit.distance <= 1) { neighbors.Add(hit.transform.gameObject); }
+        }
+
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x - 1500, transform.position.y, transform.position.z), out hit))
+        {
+            if (hit.distance <= 1) { neighbors.Add(hit.transform.gameObject); }
+        }
+
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x + 750, transform.position.y, transform.position.z + 1250), out hit))
+        {
+            if (hit.distance <= 1) { neighbors.Add(hit.transform.gameObject); }
+        }
+
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x - 750, transform.position.y, transform.position.z - 1250), out hit))
+        {
+            if (hit.distance <= 1) { neighbors.Add(hit.transform.gameObject); }
+        }
+
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x + 700, transform.position.y, transform.position.z - 1000), out hit))
+        {
+            if (hit.distance <= 1) { neighbors.Add(hit.transform.gameObject); }
+        }
+
+        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x - 700, transform.position.y, transform.position.z + 1000), out hit))
+        {
+            if (hit.distance <= 1) { neighbors.Add(hit.transform.gameObject); }
+        }
+
+        /*for(int i = 0; i <= neighbors.Count - 1; i++)
+        {
+            neighbors[i].transform.position = new Vector3(neighbors[i].transform.position.x, neighbors[i].transform.position.y + 1.5f, neighbors[i].transform.position.z);
+        }*/
+        
+        return neighbors.ToArray();
     }
 
     public void addUnits(int n)

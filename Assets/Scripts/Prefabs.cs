@@ -7,5 +7,6 @@ public class Prefabs
     public const string BOT_PLAYER_PREFAB = "Entities/BotPlayer/BotPlayer";
     public const string LIGHT_COLUMN_PREFAB = "Entities/LightColumn/LightColumn";
     public const string GUI_HEXCLICK_PREFAB = "GUI/OnHexClick/Canvas";
+    public const string SELECTOR_PREFAB = "Entities/Selector/Selector";
 
 }
