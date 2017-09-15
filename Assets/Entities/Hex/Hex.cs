@@ -10,7 +10,7 @@ public class Hex : MonoBehaviour
     public Type type = Type.NORMAL;
     public string id;
 
-	public int units = 500;
+	public int units = 1;
 	
 	// Use this for initialization
     void Awake()
@@ -24,7 +24,7 @@ public class Hex : MonoBehaviour
 
         if (owner != null)
         {
-            this.units = 1500;
+            this.units = 50;
             this.gameObject.GetComponent<Renderer>().material.color = owner.color;
             this.type = Type.CAPITAL;
         }

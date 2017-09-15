@@ -99,7 +99,7 @@ public class GameMaster : MonoBehaviour
 
         plyHex[giveRandom].GetComponent<Hex>().changeOwner("Player");
         player.GetComponent<Player>().addHex(plyHex[giveRandom]);
-        player.GetComponent<Player>().hexes[0].GetComponent<Hex>().units = 1500;
+        player.GetComponent<Player>().hexes[0].GetComponent<Hex>().units = 50;
         player.GetComponent<Player>().hexes[0].GetComponent<Hex>().updateUnitText();
     }
 
