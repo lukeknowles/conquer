@@ -94,6 +94,8 @@
     <Compile Include="Assets\Resources\Entities\Player\CameraMovement.cs" />
     <Compile Include="Assets\Resources\Entities\Player\Player.cs" />
     <Compile Include="Assets\Resources\Entities\Selector\Selector.cs" />
+    <Compile Include="Assets\Resources\Entities\Troop\Pathfinding.cs" />
+    <Compile Include="Assets\Resources\Entities\Troop\Troop.cs" />
     <Compile Include="Assets\Scripts\Bot.cs" />
     <Compile Include="Assets\Scripts\PlayerColor.cs" />
     <Compile Include="Assets\Scripts\PlayerName.cs" />

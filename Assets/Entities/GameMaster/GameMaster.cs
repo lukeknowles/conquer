@@ -96,11 +96,16 @@ public class GameMaster : MonoBehaviour
         }
 
         int giveRandom = Random.Range(0, plyHex.Count - 1);
+        
 
         plyHex[giveRandom].GetComponent<Hex>().changeOwner("Player");
-        player.GetComponent<Player>().addHex(plyHex[giveRandom]);
+        player.GetComponent<Player>().hexes[0].transform.Find("Fog").gameObject.SetActive(false);
+        player.GetComponent<Player>().hexes[0].transform.Find("UnitCount").gameObject.SetActive(true);
         player.GetComponent<Player>().hexes[0].GetComponent<Hex>().units = 50;
         player.GetComponent<Player>().hexes[0].GetComponent<Hex>().updateUnitText();
+        Hex.updateFogOfWar();
+
+
     }
 
     // Update is called once per frame

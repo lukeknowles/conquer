@@ -14,6 +14,7 @@ public class RAYTEST : MonoBehaviour
         Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x - 750, transform.position.y, transform.position.z - 1250), Color.magenta, 100f); // LEFT
         Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x + 700, transform.position.y, transform.position.z - 1000), Color.cyan, 100f); // LEFT
         Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x - 700, transform.position.y, transform.position.z + 1000), Color.white, 100f); // LEFT
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), new Vector3(transform.position.x, transform.position.y - 500, transform.position.z), Color.blue, 100f); // LEFT
     }
 
     // Update is called once per frame
