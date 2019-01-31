@@ -1,5 +1,2 @@
-# Auto detect text files and perform LF normalization
-* text=auto
-builds/* linguist-vendored
-ProjectSettings/* linguist-vendored
-Assets/Standard Assets/* linguist-vendored
+* linguist-vendored
+*.cs linguist-vendored=false
